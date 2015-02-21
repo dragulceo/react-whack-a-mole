@@ -33,19 +33,24 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
+    alias: {
+      'styles': './src/styles',
+      'components': './src/scripts/components/'
+    }
   },
 
   module: {
     preLoaders: [{
-      test: '\\.js$',
-      exclude: 'node_modules',
-      loader: 'jshint'
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'jsxhint'
     }],
 
     loaders: [{
       test: /\.js$/,
-      loader: 'jsx-loader?harmony'
+      exclude: /node_modules/,
+      loader: 'babel!jsx-loader?harmony'
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'

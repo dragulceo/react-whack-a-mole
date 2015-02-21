@@ -1,7 +1,7 @@
 /*
  * Webpack development server configuration
  *
- * This file is set up for serving the webpak-dev-server, which will watch for changes and recompile as required if
+ * This file is set up for serving the webpack-dev-server, which will watch for changes and recompile as required if
  * the subfolder /webpack-dev-server/ is visited. Visiting the root will not automatically reload.
  */
 'use strict';
@@ -28,17 +28,22 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
+    alias: {
+      'styles': './src/styles',
+      'components': './src/scripts/components/'
+    }
   },
   module: {
     preLoaders: [{
-      test: '\\.js$',
-      exclude: 'node_modules',
-      loader: 'jshint'
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'jsxhint'
     }],
     loaders: [{
       test: /\.js$/,
-      loader: 'react-hot!jsx-loader?harmony'
+      exclude: /node_modules/,
+      loader: 'react-hot!babel!jsx-loader?harmony'
     }, {
       test: /\.less/,
       loader: 'style-loader!css-loader!less-loader'

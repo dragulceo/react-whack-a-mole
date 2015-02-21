@@ -25,7 +25,7 @@ module.exports = function (config) {
           loader: 'url-loader?limit=10000&mimetype=image/png'
         }, {
           test: /\.js$/,
-          loader: 'jsx-loader?harmony'
+          loader: 'babel!jsx-loader?harmony'
         }, {
           test: /\.less/,
           loader: 'style-loader!css-loader!less-loader'
@@ -33,6 +33,12 @@ module.exports = function (config) {
           test: /\.css$/,
           loader: 'style-loader!css-loader'
         }]
+      },
+      resolve: {
+        alias: {
+          'styles': './src/styles',
+          'components': './src/scripts/components/'
+        }
       }
     },
     webpackServer: {
