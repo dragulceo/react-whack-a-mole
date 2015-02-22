@@ -15,5 +15,6 @@ var Routes = (
 );
 
 Router.run(Routes, function (Handler) {
+  "use strict";
   React.render(<Handler/>, content);
 });

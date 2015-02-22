@@ -14,7 +14,7 @@ var Game = React.createClass({
 		GameActions.hit();
   },
 	getInitialState() {
-		return GameStore.getState()
+		return GameStore.getState();
 	},
 	componentDidMount() {
 		GameStore.listen(this._onChange);
