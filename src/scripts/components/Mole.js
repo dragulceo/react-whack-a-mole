@@ -10,7 +10,7 @@ var Mole = React.createClass({
   },
   render() {
     return (
-      <div className="Mole" onClick={this.props.onClicked}>Content for Mole</div>
+      <div className="Mole" onClick={this.props.onClicked}>Hit me!</div>
     );
   }
 });
