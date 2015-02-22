@@ -6,4 +6,23 @@
   display: block;
   margin: 10px;
   float: left;
+  overflow: hidden;
+}
+
+.mole-trans-enter {
+  margin-top: 100px;
+  transition: margin-top .5s ease-in;
+}
+
+.mole-trans-enter.mole-trans-enter-active {
+  margin-top: 0;
+}
+
+.mole-trans-leave {
+  margin-top: 0;
+  transition: margin-top .5s ease-in;
+}
+
+.mole-trans-leave.mole-trans-leave-active {
+  margin-top: 100px;
 }
