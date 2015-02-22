@@ -18,7 +18,7 @@ var Board = React.createClass({
         );
       }.bind(this));
     return (
-        <div>
+        <div className="Board">
           <p>Content for Board</p>
          {board}
         </div>
@@ -26,5 +26,5 @@ var Board = React.createClass({
   }
 });
 
-module.exports = Board; 
+module.exports = Board;
 
