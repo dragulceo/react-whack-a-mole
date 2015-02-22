@@ -6,7 +6,8 @@ class GameActions {
     this.generateActions(
       'hit',
       'start',
-      'stop'
+      'stop',
+      'tick'
     );
   }
 }
