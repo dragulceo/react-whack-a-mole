@@ -10,7 +10,8 @@ var Nothing = require('./Nothing');
 var Slot = React.createClass({
   propTypes: {
     onMoleClicked: React.PropTypes.func.isRequired,
-    hasMole: React.PropTypes.bool.isRequired
+    hasMole: React.PropTypes.bool.isRequired,
+    index: React.PropTypes.number.isRequired
   },
   render() {
     var content;

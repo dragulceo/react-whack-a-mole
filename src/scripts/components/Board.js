@@ -1,7 +1,6 @@
 'use strict';
 
 var React = require('react/addons');
-
 require('../../styles/Board.less');
 
 var Slot = require('./Slot');
@@ -14,7 +13,7 @@ var Board = React.createClass({
   render() {
       var board = this.props.slots.map(function (slot) {
         return (
-          <Slot onMoleClicked={this.props.onMoleClicked} hasMole={slot.hasMole} />
+          <Slot key={slot.index} index={slot.index} onMoleClicked={this.props.onMoleClicked} hasMole={slot.hasMole} />
         );
       }.bind(this));
     return (
