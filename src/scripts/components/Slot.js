@@ -7,7 +7,6 @@ require('../../styles/Slot.less');
 var Mole = require('./Mole');
 var Nothing = require('./Nothing');
 
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var Slot = React.createClass({
   propTypes: {
     onMoleClicked: React.PropTypes.func.isRequired,
@@ -15,19 +14,15 @@ var Slot = React.createClass({
     index: React.PropTypes.number.isRequired
   },
   render() {
-    var content;
-    if(this.props.hasMole) {
-      content = (
-        <Mole className="Mole" key={this.props.index} onClicked={this.props.onMoleClicked}/>
-      );
-    } else {
-      content = '';
-    }
+    var cx = React.addons.classSet;
+    var classes = cx({
+      'Slot': true,
+      'has-mole': this.props.hasMole,
+      'is-hit': this.props.isHit
+    });
     return (
-        <div className="Slot">
-        <ReactCSSTransitionGroup transitionName="mole-trans">
-          {content}
-        </ReactCSSTransitionGroup>
+        <div className={classes}>
+          <Mole className="Mole" key={this.props.index} onClicked={this.props.onMoleClicked}/>
         </div>
       );
   }
