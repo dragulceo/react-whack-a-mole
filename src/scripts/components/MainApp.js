@@ -11,7 +11,7 @@ var RouteHandler = Router.RouteHandler;
 
 // CSS
 require('../../styles/normalize.css');
-require('../../styles/main.css');
+require('../../styles/main.less');
 
 var imageURL = require('../../images/yeoman.png');
 
@@ -20,9 +20,12 @@ var App = React.createClass({
   render: function() {
     return (
       <div className='main'>
+        <h1 className="elegant-shadow">React Whack A Mole</h1>
         <ReactTransitionGroup transitionName="fade">
-          <Link to="game">Game</Link>
-          <Link to="about">About</Link>
+          <div className="menu">
+            <Link to="game">Game</Link>
+            <Link to="about">About</Link>
+          </div>
           <RouteHandler/>
         </ReactTransitionGroup>
       </div>

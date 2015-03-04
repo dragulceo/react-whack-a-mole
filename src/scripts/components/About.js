@@ -7,7 +7,7 @@ require('../../styles/About.less');
 var About = React.createClass({
   render: function () {
     return (
-	    <div>
+	    <div className="About">
 	      <p>Cool little game made with Yeoman, React Webpack</p>
 	    </div>
     );

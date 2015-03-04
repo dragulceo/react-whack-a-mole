@@ -34,13 +34,17 @@ var Game = React.createClass({
 	},
 	render() {
 		return (
-			<div>
-        <Score score={this.state.score}/>
-        <Time time={this.state.timeLeft}/>
-        <button onClick={this.startGameClicked}>Start</button>
-        <button onClick={this.stopGameClicked}>Stop</button>
-				<Board length="10" onMoleClicked={this.onMoleClicked} slots={this.state.slots}/>
-			</div>
+      <div>
+        <div className="scoreboard">
+          <Score score={this.state.score}/>
+          <Time time={this.state.timeLeft}/>
+        </div>
+        <div className="actions">
+          <button onClick={this.startGameClicked}>Start</button>
+          <button onClick={this.stopGameClicked}>Stop</button>
+        </div>
+        <Board length="10" onMoleClicked={this.onMoleClicked} slots={this.state.slots}/>
+      </div>
 		);
 	}
 });

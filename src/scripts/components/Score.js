@@ -11,7 +11,7 @@ var Score = React.createClass({
   render() {
     return (
         <div className="Score">
-          <p>Hits: {this.props.score}</p>
+          Hits: {this.props.score}
         </div>
       );
   }
