@@ -18,7 +18,6 @@ var Board = React.createClass({
       }.bind(this));
     return (
         <div className="Board">
-          <p>Content for Board</p>
          {board}
         </div>
       );
