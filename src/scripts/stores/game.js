@@ -48,7 +48,11 @@ class GameStore {
         return (this.gameStatus === GameConstants.STATUS_STARTED);
     }
     updateTime() {
-        this.timeLeft = Math.round((this.gameDuration - (+(new Date()) - this.startTime))/SECOND_IN_MILLISECONDS);
+        if(this.startTime) {
+            this.timeLeft = Math.round((this.gameDuration - (+(new Date()) - this.startTime)) / SECOND_IN_MILLISECONDS);
+        } else {
+            this.timeLeft = 0;
+        }
     }
     onStart() {
         if(!this.gameActive()) {
@@ -67,6 +71,7 @@ class GameStore {
         clearInterval(this.timerId);
         clearInterval(this.stopTimerId);
         this.gameStatus = GameConstants.STATUS_ENDED;
+        this.startTime = null;
         this.updateTime();
 
     }
