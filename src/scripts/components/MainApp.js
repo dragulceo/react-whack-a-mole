@@ -15,6 +15,8 @@ require('../../styles/main.less');
 
 var imageURL = require('../../images/yeoman.png');
 
+var injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
 
 var App = React.createClass({
   render: function() {
