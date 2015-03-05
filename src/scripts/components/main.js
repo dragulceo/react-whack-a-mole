@@ -4,13 +4,14 @@ var Game = require('./Game');
 var React = require('react');
 var Router = require('react-router');
 var Route = Router.Route;
+var DefaultRoute = Router.DefaultRoute;
 
 var content = document.getElementById('content');
 
 var Routes = (
-  <Route name="app" path="/" handler={MainApp}>
+  <Route name="game" path="/" handler={MainApp}>
+    <DefaultRoute handler={Game}/>
     <Route name="about" path="/about" handler={About}/>
-    <Route name="game" path="/game" handler={Game}/>
   </Route>
 );
 
