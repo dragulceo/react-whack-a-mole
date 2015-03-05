@@ -1,5 +1,7 @@
 # Whack a mole
 
+[The game](http://dragulceo.github.io/react-whack-a-mole/)
+
 Made with:
  
  - [yeoman](http://yeoman.io/)
