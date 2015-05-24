@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react/addons');
+var ReactStateMagicMixin = require('alt/mixins/ReactStateMagicMixin');
 
 require('../../styles/Game.less');
 
@@ -11,18 +12,14 @@ var GameStore = require('../stores/game');
 var GameActions = require('../actions/game');
 
 var Game = React.createClass({
+    mixins: [ReactStateMagicMixin],
+    statics: {
+        registerStore: GameStore
+    },
+
 	onMoleClicked() {
 		GameActions.hit();
-  },
-	getInitialState() {
-		return GameStore.getState();
-	},
-	componentDidMount() {
-		GameStore.listen(this._onChange);
-	},
-	componentWillUnmount() {
-		GameStore.unlisten(this._onChange);
-	},
+    },
 	startGameClicked() {
 		GameActions.start();
 	},
